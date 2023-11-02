@@ -26,7 +26,7 @@ file = st.file_uploader("", type=['jpeg', 'jpg', 'png'])
 
 #load classifier
 
-model = load_model('./model3.h5')
+model = load_model('./model3.h5', compile=False)
 
 
 #class names
