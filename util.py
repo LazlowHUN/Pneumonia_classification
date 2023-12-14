@@ -3,7 +3,6 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import ImageOps, Image
-import pandas as pd
 
 def classify(image, model, class_names):
     img = tf.image.resize(image, [128, 128])

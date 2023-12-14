@@ -1,13 +1,8 @@
 import streamlit as st
 from keras.models import load_model
 from PIL import Image
-from util import classify, save_to_csv
+from util import classify
 import pandas as pd
-
-st.sidebar.title("Previous results:")
-
-df = pd.read_csv("prev_results/prev.csv")
-st.sidebar.write(df, header=False)
 
 #set title
 
@@ -46,5 +41,3 @@ if file is not None:
     #write classification
     st.write("## {}". format(class_name))
     st.write("### score: {}". format(conf_score))
-
-    save_to_csv(class_name, conf_score, "prev_results/prev.csv")
