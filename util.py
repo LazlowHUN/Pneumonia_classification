@@ -15,12 +15,3 @@ def classify(image, model, class_names):
     accuracy_score = max(predictions[0][0], 1 - predictions[0][0]) * 100
 
     return class_name, accuracy_score
-
-
-def save_to_csv(class_name, percentage, csv_file):
-    new_data = [{'Class': class_name, 'Percentage': percentage}]
-
-    new_df = pd.DataFrame(new_data)
-    df = pd.read_csv(csv_file)
-    df = pd.concat([df, new_df], ignore_index=True)
-    df.to_csv(csv_file, index=False)
